@@ -1,14 +1,14 @@
 import {Cards, Chart, CountryPicker } from './components';
-import './App.css';
+import styles from './App.module.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
+    <div className={styles.container}>
       <Cards />
       <Chart />
       <CountryPicker />
     </div>
   );
 }
-
+ 
 export default App;
