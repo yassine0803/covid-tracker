@@ -1,5 +1,5 @@
-const Card = () => {
-    return ( <h1>Card</h1> );
+const Cards = () => {
+    return ( <h1>Cards</h1> );
 }
  
-export default Card;
+export default Cards;
