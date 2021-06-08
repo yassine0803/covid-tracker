@@ -4,7 +4,7 @@ import styles from './App.module.css';
 import {fetchData} from './api';
 
 const App = () => {
-  const [data, setData] = useState()
+  const [data, setData] = useState([]);
   const getData = async () =>{
     const data = await fetchData();
     setData(data);
