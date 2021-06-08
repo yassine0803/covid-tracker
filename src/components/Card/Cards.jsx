@@ -1,8 +1,9 @@
 import { CardContent, Card, Grid, Typography } from "@material-ui/core";
 import styles from './Cards.module.css';
+import CountUp from 'react-countup';
+
 const Cards = ({data}) => {
     if(!data.confirmed) return 'loading...';
-    console.log(data.confirmed.value);
     return ( 
         <div className={styles.container}>
             <Grid container spacing={3} justify="center">
@@ -15,12 +16,14 @@ const Cards = ({data}) => {
                             Infected
                         </Typography>
                         <Typography variant="h5">
+                            <CountUp start={0} end={data.confirmed.value} duration={1} separator=",">
                             {data.confirmed.value}
+                            </CountUp>
                         </Typography>
                         <Typography
                             color="textSecondary"
                         >
-                            REAL DATE
+                            {new Date(data.lastUpdate).toDateString()}
                         </Typography>
                         <Typography variant="body2">
                             Number of active cases of COVID-19
@@ -36,12 +39,14 @@ const Cards = ({data}) => {
                             Recovery
                         </Typography>
                         <Typography variant="h5">
+                            <CountUp start={0} end={data.recovered.value} duration={1} separator=",">
                             {data.recovered.value}
+                            </CountUp>
                         </Typography>
                         <Typography
                             color="textSecondary"
                         >
-                            REAL DATE
+                            {new Date(data.lastUpdate).toDateString()}
                         </Typography>
                         <Typography variant="body2">
                             Number of recovered cases of COVID-19
@@ -57,12 +62,14 @@ const Cards = ({data}) => {
                             Deaths
                         </Typography>
                         <Typography variant="h5">
+                            <CountUp start={0} end={data.deaths.value} duration={1} separator=",">
                             {data.deaths.value}
+                            </CountUp>
                         </Typography>
                         <Typography
                             color="textSecondary"
                         >
-                            REAL DATE
+                            {new Date(data.lastUpdate).toDateString()}
                         </Typography>
                         <Typography variant="body2">
                             Number of deaths cases of COVID-19
