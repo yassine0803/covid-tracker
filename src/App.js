@@ -8,7 +8,6 @@ const App = () => {
   const getData = async () =>{
     const data = await fetchData();
     setData(data);
-    console.log(data);
   }
   useEffect(() => {
     getData();
